@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Home from "./Pages/home";
+import FormPage from "./Pages/formPage";
+import FourOhFour from "./Pages/404";
+import Upload from "./Pages/upload";
+
+
+const router = createBrowserRouter([
+  {path: "/", element: <Home />, errorElement: <FourOhFour />},
+  {path: "/form", element: <FormPage />},
+  {path: "/upload", element: <Upload />},
+  {path: "*", element: <FourOhFour />}
+]);
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

@@ -1,0 +1,10 @@
+.qr_container {
+    height: 128px !important;
+    width: 128px !important;
+}
+
+.qr_container > canvas {
+    object-fit: contain !important;
+    height: 100% !important;
+    width: 100% !important;
+}
